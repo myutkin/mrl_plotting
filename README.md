@@ -1,4 +1,4 @@
-This is a vibecoded app. The code is entirely written by AI and so a readme and other docs. I do not take credit for it except a couple of evenings that I spend guiding AI to write it and for realizing the need for such an app. You are free to take it and do whatever you wish. As I do not take credit, nor do I take any responsibility for the app actions, crashes etc. Text below explains what it is.
+This is a vibecoded app. The code is entirely written by AI, and so are the README and other docs. I do not take credit for it except a couple of evenings that I spent guiding AI to write it and for realizing the need for such an app. You are free to take it and do whatever you wish. As I do not take credit, nor do I take any responsibility for the app actions, crashes etc. Text below explains what it is.
 ---
 Below is a structured `README.md` suitable for both human developers and AI agents. It explains architecture, design decisions, implemented features, and extension points clearly and unambiguously.
 
