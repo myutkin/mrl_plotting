@@ -9,15 +9,20 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - ubuntu-latest
-          - windows-latest
+        include:
+          - os: ubuntu-latest
+            archive_name: plot-app-linux.tar.gz
+          - os: windows-latest
+            archive_name: plot-app-windows.zip
 
     steps:
       - name: Check out repository
@@ -48,14 +53,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: plot-app-${{ runner.os }}
-          path: |
-            plot-app-linux.tar.gz
-            plot-app-windows.zip
+          path: ${{ matrix.archive_name }}
 
       - name: Upload release asset
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            plot-app-linux.tar.gz
-            plot-app-windows.zip
+          files: ${{ matrix.archive_name }}
